@@ -1,4 +1,4 @@
-set :application, 'fri120914'
+set :application, 'fri120914_2'
 set :deploy_user, 'deploy'
 
 # setup repo details
