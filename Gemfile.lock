@@ -1,7 +1,7 @@
 PATH
   remote: /Users/ben/proj/reliably_deploying_rails/capistrano-cookbook
   specs:
-    capistrano-cookbook (0.1.0)
+    capistrano-cookbook (0.2.1)
       capistrano (~> 3.2)
 
 GEM
