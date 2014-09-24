@@ -4,7 +4,13 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
-gem 'pg'
+group :production do
+  gem 'pg'
+end
+
+group :development do
+  gem 'sqlite3'
+end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -33,7 +39,7 @@ group :development do
   gem 'capistrano-rails', '~> 1.1.2'
   gem 'capistrano-bundler'
   gem 'capistrano-rbenv', "~> 2.0"
-  gem 'capistrano-cookbook', path: '/Users/ben/proj/reliably_deploying_rails/capistrano-cookbook'
+  gem 'capistrano-cookbook', path: '/Users/ben/proj/reliably_deploying_rails/capistrano-cookbook', require: false
 end
 
 # Use ActiveModel has_secure_password
