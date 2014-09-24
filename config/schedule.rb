@@ -1,6 +1,8 @@
 set :output, "#{path}/log/cron_log.log"
 env :PATH, ENV['PATH']
 
+job_type :backup, "cd :path/:backup_path && :environment_variable=:environment bundle exec backup perform -t :task --config_file ./config.rb"
+
 every 2.minutes do
-  command "cd #{path}/backup && RAILS_ENV=#{fetch(:whenever_environment)} bundle exec backup perform -t rails_database --config_file ./config.rb"
+  backup 'rails_database', backup_path: 'backup'
 end
